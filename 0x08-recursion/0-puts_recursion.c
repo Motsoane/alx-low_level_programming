@@ -23,7 +23,7 @@ void _puts_recursion(char *s)
 
 	{
 
-		putchar('\n');
+		_putchar('\n');
 
 	}
 
