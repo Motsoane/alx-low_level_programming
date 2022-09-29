@@ -1,22 +1,32 @@
 #include "main.h"
 
 /**
- * _print_rev_recursion - print string in reverse
- *  @s: pointer to the string to be reversd
+ * wildcmp - compares two strings
+ * @s1: string 1.
+ * @s2: string 2. It can contains a * as a special character
+ *  Return: 1 if are identical, 0 if not.
  */
 
-void _print_rev_recursion(char *s)
+int wildcmp(char *s1, char *s2)
 
 {
 
-	if (*s)
+	if (*s2 == '*' && *(s2 + 1) != '\0' && *s1 == '\0')
 
-	{
+		return (0);
 
-		_print_rev_recursion(s + 1);
+		if (*s1 == '\0' && *s2 == '\0')
 
-			_putchar(*s);
+			return (1);
 
-	}
+		if (*s1 == *s2)
+
+			return (wildcmp(s1 + 1, s2 + 1));
+
+		if (*s2 == '*')
+
+			return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2));
+
+		return (0);
 
 }
