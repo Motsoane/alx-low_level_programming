@@ -37,6 +37,8 @@ int divisors(int n, int m)
 
 	}
 
+}
+
 	/**
 	 * is_prime_number - Check if a number is a prime number
 	 * @n: int parameter
@@ -64,4 +66,4 @@ int divisors(int n, int m)
 		}
 
 	}
-}
+
